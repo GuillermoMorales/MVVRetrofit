@@ -1,6 +1,7 @@
 package com.petrlr14.mvvm.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             layoutManager=LinearLayoutManager(this@MainActivity)
         }
         viewModel.getAll().observe(this, Observer {
+            if(it.isEmpty())
+            {
+                Toast.makeText()
+            }
             adapter.updateList(it)
         })
         btn_repo.setOnClickListener {
